@@ -8,6 +8,16 @@ window.addEventListener('resize', function() {
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
 })
+//override the mouse class
+var mouse = {
+    x: undefined,
+    y: undefined
+}
+//Add event listener that trigger onmousemove
+window.addEventListener('mousemove', function(event) {
+    mouse.x = event.x;
+    mouse.y = event.y;
+})
 //Create new class circle to create and animate a circle
 function Circle(x, y, dx, dy, radius){
     this.x = x;
@@ -19,8 +29,9 @@ function Circle(x, y, dx, dy, radius){
     this.draw = function(){
         pen.beginPath();
         pen.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-        pen.strokeStyle = 'rbg(255,0,0)';
+        pen.strokeStyle = 'white';
         pen.stroke();
+        pen.fill();
     }
     //Update the circle to bounce when reach the eadges
     this.update = function() {
@@ -32,6 +43,13 @@ function Circle(x, y, dx, dy, radius){
         }
         this.x+= this.dx;
         this.y+= this.dy;
+        //Interactivity
+        if (mouse.x - this.x < 50 && mouse.x - this.x > -50 && 
+        mouse.y - this.y < 50 && mouse.y - this.y > -50){
+            this.radius += 1;
+        }else if (this.radius > 2){
+            this.radius -= 1;
+        }
         this.draw();
     }
 }
