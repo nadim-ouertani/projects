@@ -35,7 +35,7 @@ function Circle(x, y, dx, dy, radius){
         this.draw();
     }
 }
-//Create new circle object
+//Create new array of circle
 var circleArray = [];
 for (var i = 0; i < 300 ; i++){
     var radius = 40;
@@ -43,6 +43,7 @@ for (var i = 0; i < 300 ; i++){
     var y = Math.random() * (innerHeight - radius *2) + radius;
     var dx = (Math.random() - 0.5);
     var dy = (Math.random() - 0.5);
+    //Push circle to each array
     circleArray.push(new Circle(x, y, dx , dy ,radius));
 }
 console.log(circleArray);
@@ -51,7 +52,7 @@ function animate(){
     requestAnimationFrame(animate);
     //Clear the sketch for every new circle
     pen.clearRect(0, 0, innerWidth, innerHeight);
-    //Create circle And animated
+    //Draw and animate each circle inside the array list
     for (var i = 0; i < circleArray.length; i++){
         circleArray[i].update();
     }
