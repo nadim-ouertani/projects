@@ -3,11 +3,6 @@ var canvas = document.querySelector('canvas');
 var pen = canvas.getContext("2d");
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
-//Add onresize event listener to resize the canvas with the wondow
-window.addEventListener('resize', function() {
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-})
 //override the mouse class
 var mouse = {
     x: undefined,
