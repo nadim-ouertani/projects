@@ -1,3 +1,18 @@
-body{
-    font-family: Arial, sans-serif;
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+canvas{
+    background-color: #324D5C;
+}
+html,body{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+.box{
+    background-color: white;
+    width: 300px;
+    height: 450px;
+    position: absolute;
 }
