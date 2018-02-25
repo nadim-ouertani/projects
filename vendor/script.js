@@ -16,7 +16,7 @@ box.style.top = centerHeight + 'px';
 //on resize
 window.addEventListener('resize', function() {
     repos();
-})
+});
 
 //Init function to resize the box
 function repos(){

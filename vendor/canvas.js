@@ -8,28 +8,28 @@ canvas.width = window.innerWidth;
 var mouse = {
     x: innerWidth / 2,
     y: innerHeight / 2
-}
+};
 //Add a color palette as array
 var colorArray = [
     "#FFBC67",
     "#DA727E",
     "#46B29D",
     "#F53855",
-    "#E37B40",
+    "#E37B40"
 ];
 //Event listener
 //Add event listener that trigger onmousemove
 window.addEventListener('mousemove', function(event) {
     mouse.x = event.clientX;
     mouse.y = event.clientY;
-})
+});
 //Add event listener that trigger onresize
 window.addEventListener('resize', function() {
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
     //Reset our draw
     init();
-})
+});
 //Utility
 function randomInt(min,max){
     return Math.random() * (max - min + 1 ) + min;
@@ -65,7 +65,7 @@ function Shape(x, y, dx, dy, radius, color){
         }else{
             this.opacity += 0.01;
         }
-    }
+    };
     //Draw a shape
     this.draw = function(){
         pen.beginPath();
